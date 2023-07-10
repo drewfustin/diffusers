@@ -27,6 +27,21 @@
 
 We recommend installing 🤗 Diffusers in a virtual environment from PyPi or Conda. For more details about installing [PyTorch](https://pytorch.org/get-started/locally/) and [Flax](https://flax.readthedocs.io/en/latest/#installation), please refer to their official documentation.
 
+### Personal Install
+
+I used conda to create an environment called `dif` prior to installing an editable version:
+
+```shell
+conda create -n dif -c conda-forge -c pytorch -c defaults python=3.11.4 pip=23.1.2 pytorch=2.0.1 torchvision=0.15.2 numpy=1.25.0 ipython=8.14.0 jupyterlab=4.0.2 ipywidgets=8.0.7 imageio=2.31.1 imageio-ffmpeg=0.4.8 pytorch-lightning=2.0.4 kornia=0.6.12 torchmetrics=0.11.4
+conda activate dif
+pip install transformers
+pip install -e ".[torch]"
+```
+
+### Apple Silicon (M1/M2) support
+
+Please refer to the [How to use Stable Diffusion in Apple Silicon](https://huggingface.co/docs/diffusers/optimization/mps) guide.
+
 ### PyTorch
 
 With `pip` (official package):
@@ -48,10 +63,6 @@ With `pip` (official package):
 ```bash
 pip install --upgrade diffusers[flax]
 ```
-
-### Apple Silicon (M1/M2) support
-
-Please refer to the [How to use Stable Diffusion in Apple Silicon](https://huggingface.co/docs/diffusers/optimization/mps) guide.
 
 ## Quickstart
 
